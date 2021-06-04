@@ -8,7 +8,8 @@ matrix:
         - "pip install pyopenssl ndg-httpsclient pyasn1"
       install:
         - "pip install tqdm -v"
-        - "pip install bs4 requests clint img2pdf enum34 future colorama cloudscraper"
+        - "pip install setuptools --upgrade -v"
+        - "pip install wheel bs4 requests clint img2pdf future colorama cloudscraper -v"
       script:
         - cd hulusubs_dl
         - python __main__.py --version
