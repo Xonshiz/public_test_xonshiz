@@ -27,6 +27,7 @@ matrix:
       install:
         - "python --version"
         - "pip install -r requirements.txt"
+        - "pip uninstall -y enum34"
         - "pip install pyinstaller"
       script:
         - cd comic_dl
@@ -64,7 +65,7 @@ matrix:
       env: PATH=/c/Python38:/c/Python38/Scripts:$PATH
       install:
         - "pip install  -r requirements.txt"
-        - "pip uninstall enum34"
+        - "pip uninstall -y enum34"
         - "pip install pyinstaller"
       script:
         - cd comic_dl
@@ -99,6 +100,7 @@ matrix:
         - python3 -m pip install --upgrade pip
       install:
         - "pip install  -r requirements.txt"
+        - "pip uninstall -y enum34"
         - "pip install pyinstaller"
       script:
         - cd comic_dl
