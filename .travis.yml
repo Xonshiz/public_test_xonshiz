@@ -2,6 +2,19 @@ matrix:
   include:
     - language: python
       python:
+        - 2.6
+      dist: trusty
+      install:
+        - "pip install -r requirements.txt"
+      script:
+        - cd hulusubs_dl
+        - python __main__.py --version
+        - cd ..
+      notifications:
+        email:
+          - xonshiz@gmail.com
+    - language: python
+      python:
         - 3.6
       dist: trusty
       before_install:
