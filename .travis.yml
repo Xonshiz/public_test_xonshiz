@@ -5,7 +5,7 @@ matrix:
         - 2.6
       dist: trusty
       install:
-        - "pip install --user tqdm=4.61.0"
+        - "pip install tqdm=4.61.0"
         - "pip install bs4 requests clint img2pdf enum34 future colorama cloudscraper"
       script:
         - cd hulusubs_dl
