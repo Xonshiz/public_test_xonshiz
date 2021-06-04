@@ -7,8 +7,9 @@ matrix:
       before_install:
         - "pip install --upgrade pip"
         - "pip install --upgrade setuptools"
+        - sudo apt-get install libevent-dev
       install:
-        - "pip install tqdm bs4 requests clint img2pdf enum34 future colorama cloudscraper"
+        - "pip install tqdm bs4 requests clint img2pdf enum34 future colorama cloudscraper pybind11"
       script:
         - cd hulusubs_dl
         - python __main__.py --version
