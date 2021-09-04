@@ -14,6 +14,7 @@ matrix:
         - "pip uninstall -y enum34"
         - "pip install pyinstaller"
       script:
+        - ls
         - python cli --version
         - ls
         - pyinstaller --onefile --hidden-import=queue "cli.py" -n "comic_dl_linux"
