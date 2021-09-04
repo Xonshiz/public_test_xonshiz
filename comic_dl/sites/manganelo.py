@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import re
 
 from comic_dl import globalFunctions
 import os
@@ -32,7 +31,7 @@ class Manganelo():
             breadcrumb_parts = breadcrumb.findAll('a')
             comic_name = (breadcrumb_parts[1])['title']
             chapter_number = (breadcrumb_parts[2]).find('span').text
-        else:  # manganelo
+        else:  # manganelo.com, manganato.com, readmanganato.com
             breadcrumb = source.find('div', {'class': 'panel-breadcrumb'})
             breadcrumb_parts = breadcrumb.findAll('a')
             comic_name = (breadcrumb_parts[1])['title']
@@ -77,7 +76,7 @@ class Manganelo():
         if "mangakakalot" in comic_url:
             chapter_list = source.find('div', {'class': 'chapter-list'})
             all_links = chapter_list.findAll('a')
-        else:  # manganelo
+        else:  # manganelo.com, manganato.com, readmanganato.com
             chapter_list = source.find('ul', {'class': 'row-content-chapter'})
             all_links = chapter_list.findAll('a')
 

@@ -8,3 +8,7 @@ comic_dl/.idea/vcs.xml
 comic_dl/.idea/*
 .idea/*
 venv/*
+comic_dl/.DS_Store
+*.pyc
+*.spec
+.DS_Store

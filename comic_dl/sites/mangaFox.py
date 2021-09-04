@@ -5,7 +5,6 @@ from comic_dl import globalFunctions
 import re
 import os
 import logging
-import time
 
 
 class MangaFox(object):
@@ -20,7 +19,7 @@ class MangaFox(object):
         url_split = str(manga_url).split("/")
         self.print_index = kwargs.get("print_index")
 
-        if len(url_split) is 5:
+        if len(url_split) == 5:
             self.full_series(comic_url=manga_url, comic_name=self.comic_name, sorting=self.sorting,
                              download_directory=download_directory, chapter_range=chapter_range, conversion=conversion,
                              keep_files=keep_files)

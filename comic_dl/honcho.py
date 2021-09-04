@@ -7,7 +7,7 @@ except ImportError:
     from urlparse import urlparse
 import logging
 from .sites import foolSlide
-from .sites import readcomicOnlineto
+from .sites import readcomicOnlineli
 from .sites import comicNaver
 from .sites import mangaHere
 from .sites import rawSenManga
@@ -25,7 +25,6 @@ from .sites import comicextra
 from .sites import readComicsIO
 from .sites import japscan
 from .sites import manganelo
-# from . import globalFunctions
 
 
 class Honcho(object):
@@ -92,8 +91,8 @@ class Honcho(object):
                                 chapter_range=chapter_range, conversion=kwargs.get("conversion"),
                                 keep_files=kwargs.get("keep_files"))
             return 0
-        elif domain in ["www.readcomiconline.to", "readcomiconline.to"]:
-            readcomicOnlineto.ReadComicOnlineTo(manga_url=comic_url, logger=logging,
+        elif domain in ["www.readcomiconline.li", "readcomiconline.li"]:
+            readcomicOnlineli.ReadComicOnlineLi(manga_url=comic_url, logger=logging,
                                                 current_directory=current_directory, sorting_order=sorting,
                                                 log_flag=log_flag, download_directory=download_directory,
                                                 chapter_range=chapter_range, conversion=kwargs.get("conversion"),
@@ -218,7 +217,7 @@ class Honcho(object):
                           comic_language=self.comic_language_resolver(comic_language),
                           print_index=print_index)
             return 0
-        elif domain in ["manganelo.com", "mangakakalot.com"]:
+        elif domain in ["manganelo.com", "mangakakalot.com", "manganato.com", "readmanganato.com"]:
             manganelo.Manganelo(manga_url=comic_url, logger=logging, current_directory=current_directory,
                                 sorting_order=sorting, log_flag=log_flag, download_directory=download_directory,
                                 chapter_range=chapter_range, conversion=kwargs.get("conversion"),

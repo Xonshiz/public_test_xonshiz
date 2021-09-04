@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 
 from comic_dl import globalFunctions
-import re
 import os
 
 

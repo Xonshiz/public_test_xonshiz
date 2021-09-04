@@ -24,6 +24,7 @@ class MangaChapterDownload():
 
         if self.manga_name == "" or self.chapter_number == "":
             try:
+                # Python 2 and 3 inputs() form user. On exception, we take it as Python 3
                 self.manga_name = raw_input("Please Enter Manga Name : ")
                 self.chapter_number = raw_input("Please Enter Chapter Number : ")
             except Exception as WrongInputType:
