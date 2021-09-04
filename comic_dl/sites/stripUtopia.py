@@ -1,5 +1,5 @@
 import re
-import globalFunctions
+from comic_dl import globalFunctions
 import os
 import logging
 

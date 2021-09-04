@@ -6,7 +6,7 @@ import requests
 import json
 import sys
 import os
-import globalFunctions
+from comic_dl import globalFunctions
 
 
 class MangaChapterDownload():

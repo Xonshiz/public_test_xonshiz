@@ -6,3 +6,5 @@ comic_dl/.idea/misc.xml
 comic_dl/.idea/modules.xml
 comic_dl/.idea/vcs.xml
 comic_dl/.idea/*
+.idea/*
+venv/*
