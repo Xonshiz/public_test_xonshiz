@@ -15,12 +15,14 @@ matrix:
         - "pip install pyinstaller"
       script:
         - ls
-        - python cli --version
+        - python cli.py --version
         - ls
         - pyinstaller --onefile --hidden-import=queue "cli.py" -n "comic_dl_linux"
+        - cd dist
         - ls
         - chmod +x comic_dl_linux
         - comic_dl_linux --version
+        - cd ..
         - cd ..
       notifications:
         email:
