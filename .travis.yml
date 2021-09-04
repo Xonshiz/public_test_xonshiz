@@ -32,7 +32,7 @@ matrix:
       script:
         - cd comic_dl
         - ls
-        - python __main__.py --version
+        - python __init__.py --version
         - pyinstaller --onefile --hidden-import=queue "__main__.py" -n "comic_dl_linux"
         - cd ..
       notifications:
