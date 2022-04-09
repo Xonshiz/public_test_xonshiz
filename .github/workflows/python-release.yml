@@ -16,21 +16,6 @@ on:
       - '.gitattributes'
       - '.gitignore'
       - '.dockerignore'
-  pull_request:
-    branches: [ master, main ]
-    # Don't trigger if it's just a documentation/docker update.
-    # We have separate build for checking docker updates.
-    paths-ignore:
-      - '**.md'
-      - '**.MD'
-      - '**.yml'
-      - '**.sh'
-      - 'docs/**'
-      - 'Dockerfile'
-      - 'LICENSE'
-      - '.gitattributes'
-      - '.gitignore'
-      - '.dockerignore'
 
 jobs:
   linux_job:
