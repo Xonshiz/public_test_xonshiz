@@ -24,7 +24,8 @@ jobs:
     - name: Generate Release Tag
       id: tag
       run: |
-        echo "::set-output name=release_tag::$(dist/comic_dl_linux --version | grep '^Current Version\s+:\s+(.*?)$')"
+        echo "::set-output name=release_tag::$(dist/comic_dl_linux --version)"
+        echo Current Version ${{ steps.tag.outputs.release_tag }}.
     - name: GH Release
       uses: softprops/action-gh-release@v0.1.14
       env:
@@ -50,6 +51,11 @@ jobs:
         python cli.py --version
         pyinstaller --onefile --hidden-import=queue "cli.py" -n "comic_dl.exe"
         dist/comic_dl.exe --version
+    - name: Generate Release Tag
+      id: tag
+      run: |
+        echo "::set-output name=release_tag::$(dist/comic_dl.exe --version)"
+        echo Current Version ${{ steps.tag.outputs.release_tag }}.
     - name: GH Release
       uses: softprops/action-gh-release@v0.1.14
       env:
