@@ -18,17 +18,16 @@ jobs:
     - name: Build Dist
       run: |
         python cli.py --version
-        pyinstaller --onefile --hidden-import=queue "cli.py" -n "comic_dl_linux"
-        chmod +x dist/comic_dl_linux
-        dist/comic_dl_linux --version
+        pyinstaller --onefile --hidden-import=queue "cli.py" -n "comic_dl.exe"
+        dist/omic_dl.exe --version
     - name: Generate Release Tag
       id: tag
       run: |
-        echo "::set-output name=release_tag::$(dist/comic_dl_linux --version | grep '^Current Version\s+:\s+(.*?)$')"
+        echo "::set-output name=release_tag::$(dist/omic_dl.exe --version | grep '^Current Version\s+:\s+(.*?)$')"
     - name: GH Release
       uses: softprops/action-gh-release@v0.1.14
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         tag_name: ${{ steps.tag.outputs.release_tag }}
-        files: dist/comic_dl_linux
+        files: dist/omic_dl.exe

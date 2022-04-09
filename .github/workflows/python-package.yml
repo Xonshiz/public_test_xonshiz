@@ -1,24 +1,24 @@
-name: Publish Python distributions to PyPI and TestPyPI
+# name: Publish Python distributions to PyPI and TestPyPI
 
-on: push
-jobs:
-  release:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@master
-    - name: Initialize Python 3.7
-      uses: actions/setup-python@v1
-      with:
-        python-version: 3.7
-    - name: Install Dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
-    - name: Build Dist
-      run: |
-        python setup.py sdist
-    - name: release
-      uses: pypa/gh-action-pypi-publish@master
-      with:
-        password: ${{ secrets.TEST_PYPI }}
-        repository_url: https://test.pypi.org/legacy/
+# on: push
+# jobs:
+#   release:
+#     runs-on: ubuntu-latest
+#     steps:
+#     - uses: actions/checkout@master
+#     - name: Initialize Python 3.7
+#       uses: actions/setup-python@v1
+#       with:
+#         python-version: 3.7
+#     - name: Install Dependencies
+#       run: |
+#         python -m pip install --upgrade pip
+#         pip install -r requirements.txt
+#     - name: Build Dist
+#       run: |
+#         python setup.py sdist
+#     - name: release
+#       uses: pypa/gh-action-pypi-publish@master
+#       with:
+#         password: ${{ secrets.TEST_PYPI }}
+#         repository_url: https://test.pypi.org/legacy/
