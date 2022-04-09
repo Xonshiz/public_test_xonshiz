@@ -26,7 +26,7 @@ CONFIG_FILE = 'config.json'
 class ComicDL(object):
     def __init__(self, argv):
         parser = argparse.ArgumentParser(description='Comic_dl is a command line tool to download comics and manga '
-                                                     'from various such sites.')
+                                                     'from various such sites. Testing this.')
 
         parser.add_argument('--version', action='store_true', help='Shows version and exits.')
         parser.add_argument('-s', '--sorting', nargs=1, help='Decides downloading order of chapters.')
