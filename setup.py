@@ -9,7 +9,7 @@ setuptools.setup(
     name='comic_dl',
     version=__version__.__version__,
     description='Comic-dl is a command line tool to download Comics and Manga from various Manga and Comic sites easily.',
-    long_description=readme + '\n\n' + history,
+    long_description=readme,
     author='Xonshiz',
     author_email='xonshiz@psychoticelites.com',
     url='https://github.com/Xonshiz/comic-dl',
