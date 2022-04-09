@@ -2,7 +2,7 @@ name: Building & Creating Distributables
 
 on:
   push:
-    branches: [ master ]
+    branches: [ master, main ]
     
     # Don't trigger if it's just a documentation update
     paths-ignore:
@@ -17,7 +17,7 @@ on:
       - '.gitignore'
       - '.dockerignore'
   pull_request:
-    branches: [ master ]
+    branches: [ master, main ]
     # Don't trigger if it's just a documentation/docker update.
     # We have separate build for checking docker updates.
     paths-ignore:
