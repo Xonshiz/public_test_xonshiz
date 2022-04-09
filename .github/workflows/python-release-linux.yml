@@ -1,6 +1,37 @@
-name: Create Python Release For Linux & Windows
+name: Building & Creating Distributables
 
-on: push
+on:
+  push:
+    branches: [ master ]
+    
+    # Don't trigger if it's just a documentation update
+    paths-ignore:
+      - '**.md'
+      - '**.MD'
+      - '**.yml'
+      - '**.sh'
+      - 'docs/**'
+      - 'Dockerfile'
+      - 'LICENSE'
+      - '.gitattributes'
+      - '.gitignore'
+      - '.dockerignore'
+      
+  pull_request:
+    branches: [ master ]
+    
+    # Don't trigger if it's just a documentation update
+    paths-ignore:
+      - '**.md'
+      - '**.MD'
+      - '**.yml'
+      - '**.sh'
+      - 'docs/**'
+      - 'Dockerfile'
+      - 'LICENSE'
+      - '.gitattributes'
+      - '.gitignore'
+      - '.dockerignore'
 jobs:
   linux_job:
     runs-on: ubuntu-latest
