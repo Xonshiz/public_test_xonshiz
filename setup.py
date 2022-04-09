@@ -8,8 +8,8 @@ history = open('Changelog.md').read()
 setuptools.setup(
     name='comic_dl',
     version=__version__.__version__,
-    description='Comic-dl is a command line tool to download Comics and Manga from various Manga and Comic sites easily.',
-    long_description='Comic-dl is a command line tool to download Comics and Manga from various Manga and Comic sites easily.',
+    description='Comic-dl is a command line tool to download Comics and Manga from various Manga and Comic sites easily. Test Desc short.',
+    long_description='Comic-dl is a command line tool to download Comics and Manga from various Manga and Comic sites easily. Test Desc long.',
     author='Xonshiz',
     author_email='xonshiz@psychoticelites.com',
     url='https://github.com/Xonshiz/comic-dl',
