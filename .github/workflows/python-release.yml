@@ -22,6 +22,7 @@ jobs:
         chmod +x dist/comic_dl_linux
         dist/comic_dl_linux --version
     - name: Generate Release Tag
+      id: tag
       run: |
         echo "::set-output name=release_tag::UserBuild_$(date +"%Y.%m.%d_%H-%M")"
         echo "${{ steps.tag.outputs.release_tag }}"
