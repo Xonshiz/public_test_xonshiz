@@ -20,7 +20,7 @@ jobs:
         python cli.py --version
         pyinstaller --onefile --hidden-import=queue "cli.py" -n "comic_dl_linux"
         chmod +x comic_dl_linux
-        comic_dl_linux --version
+        dist/comic_dl_linux --version
     - name: GH Release
       uses: softprops/action-gh-release@v0.1.14
       with:
