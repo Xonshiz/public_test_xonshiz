@@ -23,7 +23,7 @@ jobs:
         dist/comic_dl_linux --version
     - name: Generate Release Tag
       run: |
-        echo "::set-output name=RELEASE_TAG_NAME::$(dist/comic_dl_linux --version | grep '^Current Version\s+:\s+(.*?)$')""
+        echo "::set-output name=RELEASE_TAG_NAME::$(dist/comic_dl_linux --version | grep '^Current Version\s+:\s+(.*?)$')"
         echo ${{ steps.tag.outputs.RELEASE_TAG_NAME }}
     - name: GH Release
       uses: softprops/action-gh-release@v0.1.14
