@@ -1,0 +1,9 @@
+tqdm
+bs4
+requests
+clint
+img2pdf
+future
+colorama
+cloudscraper
+jsbeautifier

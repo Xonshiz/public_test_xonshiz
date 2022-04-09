@@ -1,29 +1,29 @@
-matrix:
-  include:
-    - os: linux
-      language: python
-      python:
-        - 3.8
-      dist: xenial
-      before_install:
-        - "pip install --upgrade pip"
-        - "pip install --upgrade setuptools"
-      install:
-        - "python --version"
-        - "pip install -r requirements.txt"
-        - "pip uninstall -y enum34"
-        - "pip install pyinstaller"
-      script:
-        - ls
-        - python cli.py --version
-        - ls
-        - pyinstaller --onefile --hidden-import=queue "cli.py" -n "comic_dl_linux"
-        - cd dist
-        - ls
-        - chmod +x comic_dl_linux
-        - comic_dl_linux --version
-        - cd ..
-        - cd ..
-      notifications:
-        email:
-          - xonshiz@gmail.com
+# matrix:
+#   include:
+#     - os: linux
+#       language: python
+#       python:
+#         - 3.8
+#       dist: xenial
+#       before_install:
+#         - "pip install --upgrade pip"
+#         - "pip install --upgrade setuptools"
+#       install:
+#         - "python --version"
+#         - "pip install -r requirements.txt"
+#         - "pip uninstall -y enum34"
+#         - "pip install pyinstaller"
+#       script:
+#         - ls
+#         - python cli.py --version
+#         - ls
+#         - pyinstaller --onefile --hidden-import=queue "cli.py" -n "comic_dl_linux"
+#         - cd dist
+#         - ls
+#         - chmod +x comic_dl_linux
+#         - comic_dl_linux --version
+#         - cd ..
+#         - cd ..
+#       notifications:
+#         email:
+#           - xonshiz@gmail.com
