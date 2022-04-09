@@ -1,6 +1,6 @@
 name: Create Python Release For Windows
 
-on: push
+on: pull
 jobs:
   release:
     runs-on: windows-latest

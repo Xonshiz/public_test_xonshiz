@@ -1,6 +1,6 @@
 name: Publish Python distributions to PyPI and TestPyPI
 
-on: push
+on: pull
 jobs:
   release:
     runs-on: ubuntu-latest
