@@ -1,6 +1,37 @@
 name: Publish Python distributions to PyPI and TestPyPI
 
-on: pull
+on:
+  push:
+    branches: [ master ]
+    
+    # Don't trigger if it's just a documentation update
+    paths-ignore:
+      - '**.md'
+      - '**.MD'
+      - '**.yml'
+      - '**.sh'
+      - 'docs/**'
+      - 'Dockerfile'
+      - 'LICENSE'
+      - '.gitattributes'
+      - '.gitignore'
+      - '.dockerignore'
+      
+  pull_request:
+    branches: [ master ]
+    
+    # Don't trigger if it's just a documentation update
+    paths-ignore:
+      - '**.md'
+      - '**.MD'
+      - '**.yml'
+      - '**.sh'
+      - 'docs/**'
+      - 'Dockerfile'
+      - 'LICENSE'
+      - '.gitattributes'
+      - '.gitignore'
+      - '.dockerignore'
 jobs:
   release:
     runs-on: ubuntu-latest
