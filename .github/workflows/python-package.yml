@@ -1,13 +1,13 @@
 name: Publish Python distributions to PyPI and TestPyPI
 
 on:
-  push:
+    push:
     branches: [ master ]
-  pull_request:
+    pull_request:
     branches: [ master ]
 
 jobs:
-  build-n-publish:
+    build-n-publish:
     name: Build and publish Python distribution
     runs-on: ubuntu-18.04
     steps:
