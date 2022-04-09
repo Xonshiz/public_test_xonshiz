@@ -1,7 +1,6 @@
 name: Publish Python distributions to PyPI and TestPyPI
 
 on: push
-name: Deploy to Heroku
 jobs:
   release:
     runs-on: ubuntu-latest
