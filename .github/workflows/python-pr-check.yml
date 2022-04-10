@@ -23,18 +23,25 @@ jobs:
     - name: Initialize Python 3.7
       uses: actions/setup-python@v1
       with:
-        python-version: 3.7
-    - uses: actions/cache@v1
-      id: cache
-      with:
-        path: ~/.cache/pip
-        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
-        restore-keys: |
-          ${{ runner.os }}-pip-
-    - name: Install
-      if: steps.cache.outputs.cache-hit != 'true'
+        python-version: [3.7]
+    - name: Get pip cache dir
+        id: pip-cache
+        run: |
+          echo "::set-output name=dir::$(pip cache dir)"
+    - name: pip cache
+        uses: actions/cache@v2
+        with:
+          path: ${{ steps.pip-cache.outputs.dir }}
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+    - name: Install Dependencies if Cache Not FOund
+      if: steps.pip-cache.outputs.pip-cache-hit != 'true'
       run: |
-        pip install pytest pytest-cov bandit sphinx recommonmark
+        python -m pip install --upgrade pip
+        pip install pyinstaller
+    - name: Install Pyinstaller
+      run: |
         python -m pip install --upgrade pip
         pip install pyinstaller
     - name: Run CLI App
