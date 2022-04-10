@@ -19,30 +19,16 @@ jobs:
   linux_job:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
     - name: Initialize Python 3.7
-      uses: actions/setup-python@v1
+    - uses: actions/checkout@master
+      uses: actions/setup-python@v2
       with:
         python-version: 3.7
-    - name: Get pip cache dir
-      id: pip-cache
-      run: |
-        echo "::set-output name=dir::$(pip cache dir)"
-    - name: pip cache
-      uses: actions/cache@v2
-      with:
-        path: ${{ steps.pip-cache.outputs.dir }}
-        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
-        restore-keys: |
-          ${{ runner.os }}-pip-
-    - name: Install Dependencies if Cache Not FOund
-      if: steps.pip-cache.outputs.pip-cache-hit != 'true'
-      run: |
-        python -m pip install --upgrade pip
-        pip install pyinstaller
+        cache: 'pip'
     - name: Install Pyinstaller
       run: |
         python -m pip install --upgrade pip
+        pip install -r requirements.txt
         pip install pyinstaller
     - name: Run CLI App
       run: |
